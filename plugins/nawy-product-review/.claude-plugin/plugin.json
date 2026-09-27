@@ -1,0 +1,7 @@
+{
+  "name": "nawy-product-review",
+  "version": "1.0.0",
+  "description": "Product reviews for management, built with you: set up in about 15 minutes, then each review is gathered from Jira and GitHub, agreed with you, and published as an interactive page with one page per feature, demo videos and a live link.",
+  "author": { "name": "Ezz Hassan" },
+  "keywords": ["product review", "weekly review", "management", "jira", "github", "vercel", "demo video"]
+}

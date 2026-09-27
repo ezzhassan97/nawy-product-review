@@ -1,0 +1,13 @@
+{
+  "name": "nawy-product-review",
+  "owner": { "name": "Ezz Hassan" },
+  "metadata": { "description": "Nawy's product review plugin for product managers." },
+  "plugins": [
+    {
+      "name": "nawy-product-review",
+      "source": "./plugins/nawy-product-review",
+      "description": "Product reviews for management: setup, the review itself, and feature demo videos.",
+      "version": "1.0.0"
+    }
+  ]
+}

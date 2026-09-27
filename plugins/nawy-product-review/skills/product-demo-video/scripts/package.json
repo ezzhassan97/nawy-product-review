@@ -1,0 +1,10 @@
+{
+  "name": "product-demo-video",
+  "private": true,
+  "description": "Renderer for the product-demo-video skill (any OS): draws each frame with a canvas, encodes with ffmpeg.",
+  "type": "module",
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.80",
+    "ffmpeg-static": "^5.2.0"
+  }
+}

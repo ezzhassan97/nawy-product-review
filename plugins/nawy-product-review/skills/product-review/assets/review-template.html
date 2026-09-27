@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{SHORT}} product review — {{LABEL}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../shared/deck.css">
+</head>
+<body>
+<main class="deck">
+
+  <!-- ============ COVER: always this title, subtitle and tags ============ -->
+  <section class="slide cover" data-section="cover">
+    <div class="text">
+      <div class="logo">{{NAWY_LOGO — inline site/brand/nawy-logo.svg exactly as it is; it sits on a white badge}}</div>
+      <p class="kicker rise">Product review</p>
+      <h1 class="rise">{{PRODUCT}}</h1>
+      <p class="lead rise">{{TAGLINE}}</p>
+      <div class="week rise"><span>{{5th OCT, 2026}}</span><span>{{PRESENTER}}</span></div>
+    </div>
+    <div class="cover-visual"></div>
+  </section>
+
+  <!-- ============ UPDATES: only when the presenter named a big update; the content is theirs ============ -->
+  <section class="slide" data-section="updates">
+    <p class="kicker">Updates</p>
+    <h2>{{The update in words, e.g. "87% of listings now refresh every day"}}</h2>
+    <div class="body split">
+      <div class="metrics">
+        <div class="metric rise"><div class="value" data-count="{{87}}" data-suffix="%">0</div><div class="label">{{Updated daily}}</div><div class="note">{{Up from 40% in January}}</div></div>
+      </div>
+      <p class="lead rise">{{What it means, in one or two sentences}}</p>
+    </div>
+    <p class="source">{{Source and date, from the presenter}}</p>
+  </section>
+
+  <!-- ============ RELEASED: the overview, one card per feature ============ -->
+  <section class="slide" data-section="released" id="released">
+    <p class="kicker">Released</p>
+    <h2>{{N}} features live since {{the last review's date}}</h2>
+    <div class="body"><div class="cards">
+      <a class="card rise" href="#{{feature-id}}"><span class="num">1</span><h3>{{Feature}}</h3><p>{{One line: what it does for whom}}</p><span class="more">Open →</span></a>
+    </div></div>
+  </section>
+
+  <!-- A feature's page: one long page, the pitch from top to bottom. id = the feature, linked from its card. -->
+  <section class="slide" data-section="released" id="{{feature-id}}">
+    <a class="back" href="#released">← Released</a>
+    <p class="kicker">Released</p>
+    <h2>{{Feature}}</h2>
+    <p class="lead">{{One line: what it does for users}}</p>
+    <div class="badges"><span class="badge">Live {{2 Oct 2026}}</span><a class="badge open" href="{{PRODUCTION_URL}}/{{route}}" target="_blank" rel="noopener">Open in {{SHORT}} ↗</a></div>
+    <div class="why rise">
+      <div><span class="tag" data-icon="{{pain | enhancement}}">{{Pain point | Enhancement}}</span><p>{{The problem, from the users' side, in one or two sentences}}</p></div>
+      <div><span class="tag" data-icon="objective">Objective</span><p>{{What it sets out to achieve}}</p><p class="moves" data-icon="metric">Should move: {{the metric}}</p></div>
+    </div>
+
+    <h3 class="part-title" data-icon="built">What we built</h3>
+    <div class="cards">
+      <div class="card"><h3>{{Point}}</h3><p>{{One line}}</p></div>
+    </div>
+
+    <h3 class="part-title" data-icon="how">How it works</h3>
+    <figure class="demo">
+      <video src="assets/{{feature}}.mp4" muted loop playsinline preload="auto"></video>
+      <figcaption>{{The flow shown}}<a href="assets/{{feature}}.mp4" download>Download video</a></figcaption>
+    </figure>
+    <div class="shots"><img src="assets/shots/{{feature}}-1.png" alt="{{Screen}}"></div>
+
+    <h3 class="part-title" data-icon="numbers">The numbers</h3>
+    <div class="metrics">
+      <div class="metric rise"><div class="before-after"><span class="before">{{3 days}}</span><span class="arrow">→</span><span class="after">{{2 h}}</span></div><div class="label">{{Time to fix a reported issue}}</div></div>
+    </div>
+    <p class="source">{{Source and date, from the presenter}}</p>
+  </section>
+
+  <!-- ============ TESTING: same overview and pages; a stage badge (Testing or UAT) instead of "Live",
+       "Open on staging ↗" ({{STAGING_URL}}/…) and "The numbers, expected" ============ -->
+  <section class="slide" data-section="testing" id="testing">
+    <p class="kicker">Testing</p>
+    <h2>{{N}} features on their way to production</h2>
+    <div class="body"><div class="cards">
+      <a class="card rise" href="#{{feature-id}}"><span class="num">1</span><h3>{{Feature}}</h3><p>{{One line}}</p><span class="more"><span class="badge stage-uat">UAT</span> · Open →</span></a>
+    </div></div>
+  </section>
+
+  <!-- ============ IN PROGRESS: cards without any status; a page only if the presenter wants one (impact expected, never measured) ============ -->
+  <section class="slide" data-section="progress" id="progress">
+    <p class="kicker">In progress</p>
+    <h2>What the squad is building now</h2>
+    <div class="body"><div class="cards">
+      <div class="card rise"><span class="num">1</span><h3>{{Feature}}</h3><p>{{One line}}</p></div>
+    </div></div>
+  </section>
+
+  <!-- ============ NEXT: in the presenter's order; an item with its own page wraps its text in <a href="#id"> ============ -->
+  <section class="slide" data-section="next">
+    <p class="kicker">Next</p>
+    <h2>Coming up, by priority</h2>
+    <ol class="next-list">
+      <li class="rise"><b>{{Stream or feature}}</b><span>{{One line: what and why}}</span></li>
+    </ol>
+  </section>
+
+</main>
+<script src="../../shared/cover-visual.js"></script>
+<script src="../../shared/deck.js"></script>
+</body>
+</html>
